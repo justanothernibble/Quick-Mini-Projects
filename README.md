@@ -1,2 +1,2 @@
 # Quick-Mini-Projects
-Small mini-projects with no ultimate purpose aside from learning.
+Extremely small and quick mini-projects with no ultimate purpose aside from testing my speed.

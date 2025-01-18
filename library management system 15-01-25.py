@@ -101,9 +101,9 @@ class Book():
 
 l1 = Library()
 l1.books.extend([
-    Book("Little Red Book", "Mao Zedong", "436", "Returned"),
-    Book("Bible", "John the Apostle", "145", "Returned"),
-    Book("Quran", "Mohammad", "984", "Returned"),
+    Book("Meditations", "Marcus Aurelius", "436", "Returned"),
+    Book("Bible", "???", "145", "Returned"),
+    Book("1984", "George Orwell", "984", "Returned"),
     Book("10 Commandments", "Moses of Egypt", "100", "Returned"),
     Book("Calc 1", "Math Wiz", "582", "Returned")
 ])

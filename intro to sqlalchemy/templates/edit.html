@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit the entry entry</title>
+</head>
+<body>
+    <form action="{{ url_for('edit_entry', id=entry.id) }}" method="post">
+        <label for="title_input">Enter new title:</label>
+        <input type="text" id="title_input" name="title_value" value="{{ entry.title }}" required>
+        
+        <label for="content_input">Enter new contents:</label>
+        <textarea id="content_input" name="content_value" required>{{ entry.content }}</textarea>
+        
+        <button type="submit">Submit</button>
+    </form>
+    <a href="{{ url_for('diary') }}">Cancel</a>
+    
+</body>
+</html>

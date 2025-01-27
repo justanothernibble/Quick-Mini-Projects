@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather API</title>
+</head>
+<body>
+    <form action="{{ url_for('home') }}" method="post">
+        <label for="city_input">Enter city:</label>
+        <input type="text" id="city_input" name="city_value" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if weather_data %}
+        <h2>Weather in {{ weather_data['name'] }}</h2>
+        <p>Temperature: {{ weather_data['main']['temp'] }}°K</p>
+        <p>Weather: {{ weather_data['weather'][0]['description'] }}</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Entry</title>
+</head>
+<body>
+    <h1>Edit Entry</h1>
+    <form action="/edit/{{ entry.id }}" method="post">
+        <label for="amount">Amount:</label>
+        <input type="number" name="amount" id="amount" step="0.01" value="{{ entry.amount }}" required>
+        <label for="category">Category:</label>
+        <input type="text" name="category" id="category" value="{{ entry.category }}" required>
+        <label for="date">Date:</label>
+        <input type="date" name="date" id="date" value="{{ entry.date.strftime('%Y-%m-%d') }}" required>
+        <label for="type">Type:</label>
+        <select name="type" id="type" required>
+            <option value="income" {% if entry.type == 'income' %}selected{% endif %}>Income</option>
+            <option value="expense" {% if entry.type == 'expense' %}selected{% endif %}>Expense</option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

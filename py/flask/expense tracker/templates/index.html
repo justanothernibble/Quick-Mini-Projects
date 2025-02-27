@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Expense Tracker</title>
+    </head>
+    <body>
+        <h1>Expense Tracker</h1>
+        <a href="/add">Add an Entry</a>
+        <table>
+            <tr>
+                <th>Amount</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Type</th>
+                <th></th>
+                <th></th>
+            </tr>
+            {% for entry in entries %}
+                <tr>
+                    <td>{{ entry.amount }}</td>
+                    <td>{{ entry.category }}</td>
+                    <td>{{ entry.date }}</td>
+                    <td>
+                        {% if entry.type == 'income' %}
+                            <span style="color: green;">Income</span>
+                        {% else %}
+                            <span style="color: red;">Expense</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <button onclick="location.href='/edit/{{ entry.id }}'">Edit</button>
+                    </td>
+                    <td>
+                        <!-- Replace the button with a form for delete -->
+                        <form action="/delete/{{ entry.id }}" method="post" style="display: inline;">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        <a href="/display">Display Entries</a>
+    </body>
+</html>

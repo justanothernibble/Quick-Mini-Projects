@@ -1,0 +1,17 @@
+{% extends "blog.html" %}
+
+{% block blogpost %}
+    {% for blog in blogs: %}
+        {% if uname==blog.get('author') %}
+            <h1>
+                {{ blog.get('p1Name') }}
+            </h1>
+            <ul>
+                {% for point in blog.get('p1Points') %}
+                    <li>{{ point }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+{% endblock %}

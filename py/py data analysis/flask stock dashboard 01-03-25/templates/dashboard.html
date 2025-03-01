@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="{{ url_for('static', filename='plot.png') }}" alt="Data Visualization">
+    <br>
+    <h1>Raw Data</h1>
+    {% for index, row in df.iterrows() %}
+        {{ row['STOCK'] }}: {{ row['PRICE'] }}<br>
+    {% endfor %}
+
+</body>
+</html>

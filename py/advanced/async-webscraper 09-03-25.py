@@ -51,6 +51,7 @@ async def fetch(url): # Standard function with error handling
         return f"Error: {e}"
 
 async def main():
+    start = time.time()
 
     urls = [ # "https://httpbin.org/get",
         "https://example.com",
@@ -102,5 +103,7 @@ async def main():
 
     else:
         print("Nothing")
+    end = time.time()
+    print(f"Time of execution took {(end-start):.2f} seconds")
 
 asyncio.run(main())

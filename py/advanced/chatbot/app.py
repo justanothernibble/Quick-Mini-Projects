@@ -1,7 +1,7 @@
+import bot
 import os
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 from flask import Flask, render_template, request, jsonify
-import bot
 
 
 # Create an instance of the Flask class
@@ -19,18 +19,11 @@ def home():
 def form():
     if request.method == 'POST':
         inputted_string = request.form['input_box']
-        response_generated = bot.generate_response(inputted_string)
-        return render_template("form.html", output = response_generated)
+        bot.generate_response(inputted_string)
+        print(bot.string_list)
+        print(bot.response_list)
+        return render_template("form.html", string_list=bot.string_list, response_list=bot.response_list )
 
 if __name__ == '__main__':
     # Run the Flask application in debug mode
     app.run(debug=True)
-
-
-"""
-Notes for expansion
-- Introduce multiple questions for the bot
-- can be done via a count variable and keeping inputs and responses in a list or dict
-
-
-"""

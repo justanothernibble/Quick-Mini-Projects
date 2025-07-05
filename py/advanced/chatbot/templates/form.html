@@ -6,17 +6,16 @@
         <title>Response</title>
     </head>
     <body>
-        <p> 
-            Bot: {{ output }}
-        </p>
-        
+        {% for i in range(response_list|length) %}
+            <p>You: {{ string_list[i] }}</p>
+            <p>Bot: {{ response_list[i] }}</p>
+        {% endfor %}
+    
 
-        <a href="/">
-            <button type="button">
-                Back
-
-            </button>
-        </a>
+        <form action = "/form" method="post">
+            <input type="text" name="input_box" placeholder="Message the chatbot...">
+            <button type="submit">Submit</button>
+        </form>
 
     </body>
 </html>
